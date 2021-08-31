@@ -58,7 +58,8 @@ public class JwtTokenVerifierFilter extends OncePerRequestFilter{
 			//getting the name from the token
 			String username = body.getSubject();
 			//here we have got all the authorities of the user 
-			var authorities = (List<Map<String,String>>)body.get("authorities");
+			List<Map<String,String>> authorities = (List<Map<String,String>>)body.get("authorities");
+		
 			
 			Set<SimpleGrantedAuthority> SimpleGrantedAuth = authorities
 				.stream()
